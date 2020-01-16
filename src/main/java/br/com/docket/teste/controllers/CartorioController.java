@@ -18,14 +18,14 @@ public class CartorioController {
     @Autowired
     private CartorioService service;
 
-    @GetMapping
+    @GetMapping("/consultar")
     public String consultar(Model model) {
         List<Cartorio> todosCartorios = service.consultar();
         model.addAttribute("cartorios", todosCartorios);
         return "consultar";
     }
 
-    @PostMapping
+    @GetMapping("/cadastrar")
     public String cadastrar(String nome, Model model) {
         if (nome != null) {
             service.criar(nome);
@@ -33,7 +33,7 @@ public class CartorioController {
         return "cadastrar";
     }
 
-    @RequestMapping(params = "put")
+    @GetMapping("/editar")
     public String editar(Integer id,  String nome, Model model) {
         if (nome == null) {
             Cartorio cartorio = service.consultar(id).get();
@@ -47,7 +47,7 @@ public class CartorioController {
         }
     }
 
-    @RequestMapping(params = "delete")
+    @GetMapping("/remover")
     public String remover(Integer id, Model model) {
         service.excluir(id);
         return "redirect:consultar";

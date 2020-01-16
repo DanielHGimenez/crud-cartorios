@@ -6,34 +6,41 @@
     <title>Cadastrar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>-->
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
 </head>
 <body>
-<div class="wrapper">
-    <div class="header row">
-        <form th:action="@{/cartorios}" method="post"><button type="submit" class="btn" href="/cadastrar">Cadastrar</button></form>
-        <form th:action="@{/cartorios}" method="get"><button class="btn" >Consultar</button></form>
+<div class="wrapper row">
+    <div class="header col-md-2 sidebar bg-light">
+        <div class="nav h-100 flex-column">
+            <div class="nav-item menu-btn mx-auto mt-auto">
+                <a href="/cartorios/cadastrar">
+                    <i class="material-icons menu-icon">add_circle</i>
+                </a>
+            </div>
+            <div class="nav-item menu-btn mx-auto mb-auto">
+                <a href="/cartorios/consultar">
+                    <i class="material-icons menu-icon">find_in_page</i>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="conteudo">
-        <div class="container">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="row">
+    <div class="conteudo flex-column col-10">
+        <div class="row mt-5">
 
                         <div class="col-4 offset-4 bg-dark px-2 py-3">
                             <h3 class="text-light mb-4">Editar</h3>
-                            <form class="form-label-group" action="#" th:action="@{/cartorios}" method="put">
-                                <input type="text" class="form-control mb-2" th:value="${id}" placeholder="${id}" readonly>
-                                <input type="text" class="form-control mb-2" name="nome" placeholder="${nome}">
-                                <button class="btn btn-primary" type="submit">Salvar</button>
+                            <form class="form-label-group" action="#" th:action="@{/cartorios/editar}" method="get">
+                                <input type="text" class="form-control mb-2" name="id" th:value="${id}" readonly>
+                                <input type="text" class="form-control mb-2" name="nome" placeholder="Nome">
+                                <div class="flex">
+                                    <button class="btn btn-primary" type="submit">Salvar</button>
+                                    <a class="btn btn-secondary" href="/cartorios/consultar">Cancelar</a>
+                                </div>
                             </form>
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
