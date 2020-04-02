@@ -43,6 +43,7 @@ Os endpoints para acesso pelo navegador devem ser acessados com o prefixo **/car
 
  - **/editar** <br> Usado para acessar a tela que edita um cartório. **Não** deve ser acessado diretamente, só deve ser acessada através do fluxo normal da aplicação.
 <br>
+
 ### Considerações
 
 Essa foi a primeira documentação que eu fiz em um projeto. Caso você tenha alguma sugestão de melhoria da documentação, adicione uma issue do tipo [documentation](https://github.com/DanielHGimenez/docket-teste/labels/documentation) ao repositório me explicando como a documentação poderia ser melhorada. 
