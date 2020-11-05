@@ -1,6 +1,6 @@
 # Docket-test
 
-Esse projeto foi desenvolvido para um teste de admissão. A premissa do projeto é ser um crud de cartórios, onde cada cartório é composto apenas por um campo "nome".
+Umm crud de cartórios, onde cada cartório é composto apenas por um campo "nome".
 
 ## Tecnologias
 
